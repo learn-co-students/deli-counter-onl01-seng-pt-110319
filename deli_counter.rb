@@ -3,18 +3,24 @@ require 'pry'
 def line(katz_deli)
   if katz_deli.size == 0 
     puts "The line is currently empty."
-  else
-    position = 0
-    counter = 0 
-    current_line = []
-  
-    while counter < katz_deli.size do 
-      current_line << " #{position + 1}. #{katz_deli[counter]}"
-      counter += 1 
-      position += 1
+  else katz_deli.length > 0 
+    updated = katz_deli.map.with_index do |customer, index|
+      " #{index + 1}. #{customer}"
     end
-    puts "The line is currently:" << current_line.join
+    puts "The line is currently:" + updated.join
   end
+   
+  #   position = 0   
+  #   counter = 0 
+  #   current_line = []
+  
+  #   while counter < katz_deli.size do 
+  #     current_line << " #{position + 1}. #{katz_deli[counter]}"
+  #     counter += 1 
+  #     position += 1
+  #   end
+  #   puts "The line is currently:" << current_line.join
+  # end
 end
 
 
